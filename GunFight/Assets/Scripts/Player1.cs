@@ -7,7 +7,7 @@ public class Player1 : MonoBehaviour
 
     [SerializeField] float moveSpeed = 10f;
     float xMin;
-    float xMax;
+    [SerializeField] float xMax = -6f;
     float yMin;
     float yMax;
     [SerializeField] float padding = 1f;
@@ -42,7 +42,7 @@ public class Player1 : MonoBehaviour
     {
         Camera gameCamera = Camera.main;
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
+        //xMax = -6f;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
 
