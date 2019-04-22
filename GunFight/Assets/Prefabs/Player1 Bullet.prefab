@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5969829555493779984}
   - component: {fileID: 5969829555493779987}
   - component: {fileID: 5969829555493779986}
+  - component: {fileID: 2090834000241046973}
   m_Layer: 0
   m_Name: Player1 Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +149,15 @@ PolygonCollider2D:
       - {x: -0.939003, y: -0.16797471}
       - {x: -0.9375, y: -0.1625}
       - {x: -0.29874998, y: -0.16499999}
+--- !u!114 &2090834000241046973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969829555493779999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902e3e825a517744e9b0900dd5533033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

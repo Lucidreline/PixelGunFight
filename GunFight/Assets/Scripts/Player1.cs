@@ -10,7 +10,8 @@ public class Player1 : MonoBehaviour
     [SerializeField] float xMax = -6f;
     float yMin;
     float yMax;
-    [SerializeField] float padding = 1f;
+    [SerializeField] float Ypadding = .5f;
+    [SerializeField] float Xpadding = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,10 +42,10 @@ public class Player1 : MonoBehaviour
     private void setUpMoveBoundries()
     {
         Camera gameCamera = Camera.main;
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + Xpadding;
         //xMax = -6f;
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + Ypadding;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - Ypadding;
 
     }
 }
