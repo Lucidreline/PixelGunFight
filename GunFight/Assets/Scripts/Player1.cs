@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player1 : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Player1 : MonoBehaviour
     float yMax;
     [SerializeField] float Ypadding = .5f;
     [SerializeField] float Xpadding = 1f;
+    [SerializeField] int health = 100;
+    [SerializeField] TextMeshProUGUI healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,11 @@ public class Player1 : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        healthText.text = health.ToString();
+    }
+
     void FixedUpdate()
     {
         Move();
@@ -30,6 +38,8 @@ public class Player1 : MonoBehaviour
 
     private void Move()
     {
+        
+
         var deltaX = Input.GetAxis("Horizontal1") * Time.deltaTime * moveSpeed;
         var deltaY = Input.GetAxis("Vertical1") * Time.deltaTime * moveSpeed;
 
