@@ -16,24 +16,25 @@ public class Player1 : MonoBehaviour
     [SerializeField] int health = 100;
     [SerializeField] TextMeshProUGUI healthText;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         setUpMoveBoundries();
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
+        
         healthText.text = health.ToString();
     }
+
+    
 
     void FixedUpdate()
     {
         Move();
-        
-        
     }
 
     private void Move()

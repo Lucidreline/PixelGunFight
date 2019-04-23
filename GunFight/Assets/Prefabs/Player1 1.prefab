@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8803024294613502967}
   m_Layer: 0
   m_Name: Bullet Spawner
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5969829555493779999, guid: b313eafe06bb7964bbf0e59cb664580d,
     type: 3}
   bulletSpeed: 30
+  ammoCount: 3
+  ammoCountText: {fileID: 0}
+  bulletReplenishTime: 8
 --- !u!1 &8803024294667977776
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +195,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   xMax: -6
-  padding: 1
+  Ypadding: 0.5
+  Xpadding: 1
+  health: 100
+  healthText: {fileID: 0}
 --- !u!50 &8803024294667977781
 Rigidbody2D:
   serializedVersion: 4
@@ -230,7 +236,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.5958606}
     oldSize: {x: 16, y: 16}
     newSize: {x: 16, y: 16}
     adaptiveTilingThreshold: 0.5
