@@ -13,8 +13,10 @@ public class Player1 : MonoBehaviour
     float yMax;
     [SerializeField] float Ypadding = .5f;
     [SerializeField] float Xpadding = 1f;
-    [SerializeField] int health = 100;
+
+    [SerializeField] float health = 50;
     [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] float bulletDamage = 25f;
 
     
 
@@ -49,6 +51,24 @@ public class Player1 : MonoBehaviour
         transform.position = new Vector2(newXPos, newYPos);
     }
     
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag == "Bullet2")
+        {
+            affectHealth(-bulletDamage);
+            moveSpeed *= (health / 100);
+        }
+    }
+
+    void affectHealth(float healthChange)
+    {
+        health += healthChange;
+        if(health <= 0)
+        {
+            health = 0;
+            //Doesntly allow health to fall under 0
+        }
+    }
 
     private void setUpMoveBoundries()
     {
@@ -57,6 +77,5 @@ public class Player1 : MonoBehaviour
         //xMax = -6f;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + Ypadding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - Ypadding;
-
     }
 }
