@@ -9,6 +9,10 @@ public class Coin : MonoBehaviour
     GameObject p2PlayerGun;
     BulletSpawner p1GunScript;
     BulletSpawner p2GunScript;
+
+    [SerializeField] int bounceTimesBeforeDestroyed = 3;
+    [SerializeField] int shredCount = 0;
+
     
 
     // Start is called before the first frame update
@@ -33,9 +37,15 @@ public class Coin : MonoBehaviour
             p2GunScript.AddAmmo(bulletAmmount);
             Destroy(gameObject);
         }
-        else if(collider.gameObject.tag == "Shredder")
+        
+
+        if(collider.gameObject.tag == "Shredder")
         {
-            Destroy(gameObject);
+            shredCount++;
+                if(shredCount >= bounceTimesBeforeDestroyed)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

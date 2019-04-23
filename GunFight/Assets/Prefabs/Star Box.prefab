@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0aa3fa41fba05428f551a6d5cb4ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsUntilBroken: 1
+  shotsUntilBroken: 4
 --- !u!1 &972008563828378781
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0aa3fa41fba05428f551a6d5cb4ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsUntilBroken: 1
+  shotsUntilBroken: 3
 --- !u!1 &972008564425758604
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0aa3fa41fba05428f551a6d5cb4ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsUntilBroken: 3
+  shotsUntilBroken: 10
 --- !u!1 &972008564722761241
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,4 +561,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0aa3fa41fba05428f551a6d5cb4ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotsUntilBroken: 3
+  shotsUntilBroken: 10

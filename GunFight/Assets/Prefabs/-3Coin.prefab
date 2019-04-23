@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3454726535291085329}
   - component: {fileID: 7047703048697149975}
   - component: {fileID: 6572214246477758268}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: -3Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletAmmount: -3
+  bounceTimesBeforeDestroyed: 3
+  shredCount: 0
 --- !u!50 &6572214246477758268
 Rigidbody2D:
   serializedVersion: 4

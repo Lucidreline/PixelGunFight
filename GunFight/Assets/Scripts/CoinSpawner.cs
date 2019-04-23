@@ -6,8 +6,8 @@ public class CoinSpawner : MonoBehaviour
 {
     [SerializeField] float coinDropFrequency;
     [SerializeField] List<GameObject> coinPrefabs;
-    [SerializeField] float freqMax = 2f;
-    [SerializeField] float freqMin = 5f;
+    [SerializeField] float maxFreq = 5f;
+    [SerializeField] float minFreq = 2f;
     float dropXPos;
     
     
@@ -21,11 +21,11 @@ public class CoinSpawner : MonoBehaviour
     IEnumerator DropRandomCoin()
     {
         coinLoop = false;
-        coinDropFrequency = Random.Range(freqMin, freqMax);
+        coinDropFrequency = Random.Range(minFreq, maxFreq);
 
         yield return new WaitForSeconds(coinDropFrequency);
 
-        Vector2 dropPos = new Vector2 (Random.Range(-5f, 5f), 8 );
+        Vector2 dropPos = new Vector2 (Random.Range(-5f, 5f), transform.position.y );
         int RandomIndex = Random.Range(0, coinPrefabs.Count);
         GameObject coinPrefab = coinPrefabs[RandomIndex];
         Instantiate(coinPrefab, dropPos, Quaternion.identity);

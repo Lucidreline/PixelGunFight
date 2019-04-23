@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
   - Coin
   - Gun
   - Gun1
   - Gun2
   - Bullet1
   - Bullet2
+  - Shredder
   layers:
   - Default
   - TransparentFX
