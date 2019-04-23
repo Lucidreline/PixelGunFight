@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8803024294613502964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.67, y: -0.72133374, z: 0}
+  m_LocalPosition: {x: 9.67, y: -2.35, z: 0}
   m_LocalScale: {x: 0.6666666, y: 0.6666666, z: 1}
   m_Children: []
   m_Father: {fileID: 8803024294667977778}
@@ -199,6 +199,7 @@ MonoBehaviour:
   Xpadding: 1
   health: 100
   healthText: {fileID: 0}
+  bulletDamage: 25
 --- !u!50 &8803024294667977781
 Rigidbody2D:
   serializedVersion: 4
