@@ -11,35 +11,12 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] int ammoCount = 3;
 
     [SerializeField] TextMeshProUGUI ammoCountText;
-    [SerializeField] int bulletReplenishTime = 8;
-    bool bulletLoop = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         ammoCountText.text = ammoCount.ToString();
-        fire();
-
-        if (bulletLoop)
-        {
-            StartCoroutine(AddBulletsEveryXSeconds());
-        }
-        
-    }
-
-    IEnumerator AddBulletsEveryXSeconds()
-    {
-        bulletLoop = false;
-        yield return new WaitForSeconds(bulletReplenishTime);
-        bulletLoop = true;
-        AddAmmo(1);
-        
+        fire(); 
     }
 
     public void AddAmmo(int howMuchAmmo)
