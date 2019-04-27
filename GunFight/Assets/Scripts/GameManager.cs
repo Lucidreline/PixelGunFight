@@ -49,8 +49,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void buttonTest()
+    {
+        Debug.Log("Star Test");
+    }
+
     public void StarDestroyed(int playerNum)
     {
+        
         if(playerNum == 1)
         {
             p1StarCount++;
@@ -69,12 +75,12 @@ public class GameManager : MonoBehaviour
         if (p1StarCount >= 3)
         {
             WinnerScreen(1);
-            Debug.Log("P1 wins");
+            
         }
         else if (p2StarCount >= 3)
         {
             WinnerScreen(2);
-            Debug.Log("P2 wins");
+            
         }
     }
 
