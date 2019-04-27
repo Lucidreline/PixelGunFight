@@ -97,7 +97,6 @@ MonoBehaviour:
   bulletSpeed: 30
   ammoCount: 3
   ammoCountText: {fileID: 0}
-  bulletReplenishTime: 8
 --- !u!1 &8803024294667977776
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e60b9fff5822942b03c86fc78753fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 7
   xMax: -6
   Ypadding: 0.47
   Xpadding: 1

@@ -6,24 +6,24 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     int p1StarCount = 0;
-    //int p2StarCount = 0;
+    int p2StarCount = 0;
     [SerializeField]TextMeshProUGUI p1StarText;
-    //[SerializeField]TextMeshProUGUI p2StarText;
+    [SerializeField]TextMeshProUGUI p2StarText;
 
     // for the bullet replenishments
     GameObject bulletSpawner;
-    //GameObject bulletSpawner2;
+    GameObject bulletSpawner2;
     BulletSpawner bulletSpawnerScript;
-    //BulletSpawner bulletSpawnerScript2;
+    BulletSpawner2 bulletSpawnerScript2;
     [SerializeField] int bulletReplenishTime = 8;
     bool bulletLoop = true;
 
     void Start()
     {
         bulletSpawner = GameObject.FindGameObjectWithTag("Gun1");
-        //bulletSpawner2 = GameObject.FindGameObjectWithTag("Gun2");
+        bulletSpawner2 = GameObject.FindGameObjectWithTag("Gun2");
         bulletSpawnerScript = bulletSpawner.GetComponent<BulletSpawner>();
-        //bulletSpawnerScript = bulletSpawner2.GetComponent<BulletSpawner>();
+        bulletSpawnerScript2 = bulletSpawner2.GetComponent<BulletSpawner2>();
 
     }
 
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(bulletReplenishTime);
         bulletLoop = true;
         bulletSpawnerScript.AddAmmo(1);
-        //bulletSpawnerScript2.AddAmmo(1);
+        bulletSpawnerScript2.AddAmmo(1);
         
 
     }
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             p1StarCount++;
         }else if (playerNum == 2)
         {
-            //p2StarCount++;
+            p2StarCount++;
         }
         ManageStars();
     }
@@ -61,17 +61,17 @@ public class GameManager : MonoBehaviour
     private void ManageStars()
     {
         p1StarText.text = p1StarCount.ToString();
-        //p2StarText.text = p2StarCount.ToString();
+        p2StarText.text = p2StarCount.ToString();
 
         if (p1StarCount >= 3)
         {
             //p1 wins
             Debug.Log("P1 wins");
         }
-        //else if (p2StarCount >= 3)
-        //{
+        else if (p2StarCount >= 3)
+        {
             //p1 wins
-            //Debug.Log("P2 wins");
-        //}
+            Debug.Log("P2 wins");
+        }
     }
 }
