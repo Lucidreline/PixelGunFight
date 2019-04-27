@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5969829555493779985}
   - component: {fileID: 5969829555493779984}
   - component: {fileID: 5969829555493779987}
-  - component: {fileID: 5969829555493779986}
   - component: {fileID: 2090834000241046973}
+  - component: {fileID: 4250228741858019426}
   m_Layer: 13
   m_Name: 'Player2 Bullet '
   m_TagString: Bullet2
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5969829555493779999}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.36, y: 1.31, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5969829555493779984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a8412ffcd5dcb244eb0695e6bfdcd748, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 16, y: 16}
@@ -94,7 +94,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -103,7 +103,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &5969829555493779986
+--- !u!114 &2090834000241046973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969829555493779999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902e3e825a517744e9b0900dd5533033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &4250228741858019426
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,36 +140,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.16963863, y: -0.055054426}
-      - {x: -0.27524567, y: 0.072849035}
-      - {x: -0.2597227, y: -0.0042374134}
-      - {x: -0.24537468, y: -0.024360418}
-      - {x: -0.23853397, y: -0.0030491352}
-      - {x: -0.24299717, y: 0.020239115}
-      - {x: -0.18357277, y: -0.024892092}
-      - {x: -0.18029022, y: -0.022557735}
-      - {x: -0.2958212, y: -0.16277385}
-      - {x: -0.04030609, y: -0.019340992}
-      - {x: -0.04067993, y: 0.020266771}
-      - {x: -0.29874992, y: 0.16259503}
-      - {x: -0.58824635, y: 0.16213465}
-      - {x: -0.9395175, y: 0.16131043}
-      - {x: -0.9411535, y: 0.17865348}
-      - {x: -0.9790802, y: 0.18140984}
-      - {x: -0.9779906, y: -0.18249989}
-      - {x: -0.93849707, y: -0.1809969}
-      - {x: -0.939003, y: -0.16797471}
-      - {x: -0.9375, y: -0.1625}
-      - {x: -0.29874998, y: -0.16499999}
---- !u!114 &2090834000241046973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5969829555493779999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902e3e825a517744e9b0900dd5533033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    - - {x: 0.28639317, y: -0.036894977}
+      - {x: 0.32389164, y: 0.010552108}
+      - {x: -0.19749999, y: -0.12}
+      - {x: -0.16, y: -0.1025}
+      - {x: -0.1575, y: -0.099999994}
+      - {x: -0.12, y: -0.082499996}
+      - {x: -0.11, y: -0.083749995}
+      - {x: 0.02902627, y: -0.0059214234}
+      - {x: -0.037499998, y: 0.04}
+      - {x: 0.29757738, y: 0.17190754}
+      - {x: -0.29874998, y: 0.16749999}
+      - {x: -0.82874995, y: 0.18249999}
+      - {x: 0.980016, y: 0.1658684}
+      - {x: 0.9588444, y: -0.17528981}
+      - {x: 0.51433444, y: -0.049447715}
+      - {x: 0.38220286, y: 0.025393963}
+      - {x: 0.3098619, y: -0.1467371}
+      - {x: 0.9834373, y: -0.17913163}
+      - {x: 0.44966698, y: 0.042893887}

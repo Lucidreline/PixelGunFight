@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p1StarText: {fileID: 0}
-  bulletReplenishTime: 2
+  p2StarText: {fileID: 0}
+  bulletReplenishTime: 8

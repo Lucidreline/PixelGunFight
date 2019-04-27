@@ -37,6 +37,7 @@ public class Player2 : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, .1f);
     }
 
     private void Move()
