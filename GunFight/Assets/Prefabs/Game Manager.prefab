@@ -46,3 +46,5 @@ MonoBehaviour:
   p1StarText: {fileID: 0}
   p2StarText: {fileID: 0}
   bulletReplenishTime: 8
+  winnerScreenUI: {fileID: 0}
+  displayWinner: {fileID: 0}

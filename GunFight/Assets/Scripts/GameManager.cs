@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
 
     private void WinnerScreen(int playerNum)
     {
+        Time.timeScale = 0f;
         string winner;
 
         if(playerNum == 1)
