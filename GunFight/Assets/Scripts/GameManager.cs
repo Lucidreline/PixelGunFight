@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int bulletReplenishTime = 8;
     bool bulletLoop = true;
 
+    [SerializeField] GameObject winnerScreenUI;
+    [SerializeField] TextMeshProUGUI displayWinner;
+
     void Start()
     {
         bulletSpawner = GameObject.FindGameObjectWithTag("Gun1");
@@ -65,13 +68,29 @@ public class GameManager : MonoBehaviour
 
         if (p1StarCount >= 3)
         {
-            //p1 wins
+            WinnerScreen(1);
             Debug.Log("P1 wins");
         }
         else if (p2StarCount >= 3)
         {
-            //p1 wins
+            WinnerScreen(2);
             Debug.Log("P2 wins");
         }
+    }
+
+    private void WinnerScreen(int playerNum)
+    {
+        string winner;
+
+        if(playerNum == 1)
+        {
+            winner = "Player 1";
+        }
+        else
+        {
+            winner = "Player 2";
+        }
+        displayWinner.text = winner;
+        winnerScreenUI.SetActive(true);
     }
 }
