@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject winnerScreenUI;
     [SerializeField] TextMeshProUGUI displayWinner;
 
+    [SerializeField] GameObject pauseMenu; 
+
+    bool isPaused;
+
     void Start()
     {
         bulletSpawner = GameObject.FindGameObjectWithTag("Gun1");
@@ -28,10 +32,15 @@ public class GameManager : MonoBehaviour
         bulletSpawnerScript = bulletSpawner.GetComponent<BulletSpawner>();
         bulletSpawnerScript2 = bulletSpawner2.GetComponent<BulletSpawner2>();
 
+        isPaused = false;
+        UnpauseGame();
+        
+
     }
 
     void Update()
     {
+        HandlePauseBtn();
         if (bulletLoop)
         {
             StartCoroutine(AddBulletsEveryXSeconds());
@@ -47,6 +56,33 @@ public class GameManager : MonoBehaviour
         bulletSpawnerScript2.AddAmmo(1);
         
 
+    }
+
+    void HandlePauseBtn()
+    {
+        if (Input.GetKeyDown("space") && isPaused == false)
+        {
+            PauseGame();
+            
+        }
+        else if (Input.GetKeyDown("space") && isPaused == true)
+        {
+            UnpauseGame();
+            
+        }
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+        isPaused = true;
+    }
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        isPaused = false;
     }
 
     public void buttonTest()
@@ -100,4 +136,6 @@ public class GameManager : MonoBehaviour
         displayWinner.text = winner;
         winnerScreenUI.SetActive(true);
     }
+
+    
 }

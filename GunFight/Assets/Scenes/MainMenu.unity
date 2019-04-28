@@ -2876,6 +2876,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuScreenManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4205646834417241822, guid: 0e2558262577c3841b380012b87ec95f,
+        type: 3}
+      propertyPath: menuScreens.Array.data[0]
+      value: 
+      objectReference: {fileID: 1447358765}
+    - target: {fileID: 4205646834417241822, guid: 0e2558262577c3841b380012b87ec95f,
+        type: 3}
+      propertyPath: menuScreens.Array.data[1]
+      value: 
+      objectReference: {fileID: 300673436}
     - target: {fileID: 4205646834417241823, guid: 0e2558262577c3841b380012b87ec95f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2931,16 +2941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4205646834417241822, guid: 0e2558262577c3841b380012b87ec95f,
-        type: 3}
-      propertyPath: menuScreens.Array.data[0]
-      value: 
-      objectReference: {fileID: 1447358765}
-    - target: {fileID: 4205646834417241822, guid: 0e2558262577c3841b380012b87ec95f,
-        type: 3}
-      propertyPath: menuScreens.Array.data[1]
-      value: 
-      objectReference: {fileID: 300673436}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e2558262577c3841b380012b87ec95f, type: 3}
 --- !u!1001 &5740423865078677930
@@ -2983,7 +2983,7 @@ PrefabInstance:
     - target: {fileID: 5740423864303995496, guid: b9657417d51adef4d9483b907799a197,
         type: 3}
       propertyPath: minFreq
-      value: 1.1
+      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9657417d51adef4d9483b907799a197, type: 3}

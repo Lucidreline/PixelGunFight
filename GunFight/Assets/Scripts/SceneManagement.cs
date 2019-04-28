@@ -21,4 +21,9 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNum);
     }
+
+    public void SetNormalTimescale()
+    {
+        Time.timeScale = 1f;
+    }
 }
