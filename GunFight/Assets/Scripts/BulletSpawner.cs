@@ -9,10 +9,15 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed = 20;
     [SerializeField] int ammoCount = 3;
-
+    [SerializeField] GameObject muzzleFlash;
+    MuzzleFlash flashScript;
     [SerializeField] TextMeshProUGUI ammoCountText;
 
-    // Update is called once per frame
+    void Start()
+    {
+        flashScript = muzzleFlash.GetComponent<MuzzleFlash>();
+    }
+
     void Update()
     {
         ammoCountText.text = ammoCount.ToString();
@@ -32,8 +37,10 @@ public class BulletSpawner : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            
             if(ammoCount > 0)
             {
+                flashScript.ActivateFlash();
                 var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);
                 ammoCount--;
