@@ -97,5 +97,5 @@ MonoBehaviour:
   - {fileID: 3521052741492313496, guid: 9addb4c1a6779e64fb9b7d6ca5debb0d, type: 3}
   - {fileID: 3223286379912250706, guid: d8920207799afa54780c1eaa49fb304f, type: 3}
   - {fileID: 2018551651674086720, guid: b239d39dae06b484092746bdc1bf6702, type: 3}
-  maxFreq: 5
-  minFreq: 2
+  maxFreq: 4
+  minFreq: 1

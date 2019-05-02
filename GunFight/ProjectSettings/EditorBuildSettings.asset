@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2500f76505a60b94d994db97e60ee344
   - enabled: 1
-    path: Assets/Scenes/Vs_Mode.unity
+    path: Assets/Scenes/Vs-Normal.unity
     guid: 793e80ef002cc2b4aaf3cde02abb280e
   m_configObjects: {}

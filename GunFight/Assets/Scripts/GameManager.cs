@@ -15,13 +15,43 @@ public class GameManager : MonoBehaviour
     GameObject bulletSpawner2;
     BulletSpawner bulletSpawnerScript;
     BulletSpawner2 bulletSpawnerScript2;
-    [SerializeField] int bulletReplenishTime = 8;
+    
     bool bulletLoop = true;
 
     [SerializeField] GameObject winnerScreenUI;
     [SerializeField] TextMeshProUGUI displayWinner;
 
-    [SerializeField] GameObject pauseMenu; 
+    [SerializeField] GameObject pauseMenu;
+
+    [SerializeField] int bulletReplenishTime = 8;
+    [SerializeField] float playerHealth = 100f;
+    [SerializeField] float playerMovementSpeed = 7.5f;
+    [SerializeField] float playerBulletDamage = 20f;
+    [SerializeField] float playerBulletSpeed = 20f;
+    [SerializeField] int startAmmoCount = 2;
+
+    
+    //send info
+    public float GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+    public float GetMovementSpeed()
+    {
+        return playerMovementSpeed;
+    }
+    public float GetBulletDamage()
+    {
+        return playerBulletDamage;
+    }
+    public float GetBulletSpeed()
+    {
+        return playerBulletSpeed;
+    }
+    public int GetStartBulletCount()
+    {
+        return startAmmoCount;
+    }
 
     bool isPaused;
 
