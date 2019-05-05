@@ -26,4 +26,8 @@ public class SceneManagement : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
