@@ -29,8 +29,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] float playerBulletDamage = 20f;
     [SerializeField] float playerBulletSpeed = 20f;
     [SerializeField] int startAmmoCount = 2;
+    [SerializeField] GameObject camera;
 
-    
+
     //send info
     public float GetPlayerHealth()
     {
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
         bulletSpawner = GameObject.FindGameObjectWithTag("Gun1");
         bulletSpawner2 = GameObject.FindGameObjectWithTag("Gun2");
         bulletSpawnerScript = bulletSpawner.GetComponent<BulletSpawner>();
