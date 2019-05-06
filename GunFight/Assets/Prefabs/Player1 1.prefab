@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4927896611243586867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.8, y: -2.21, z: -1}
-  m_LocalScale: {x: 6.311507, y: 6.311507, z: 6.311507}
+  m_LocalScale: {x: 5.4023, y: 5.4023, z: 5.4023}
   m_Children: []
   m_Father: {fileID: 8803024294667977778}
   m_RootOrder: 1
@@ -187,9 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5969829555493779999, guid: b313eafe06bb7964bbf0e59cb664580d,
     type: 3}
-  muzzleFlash: {fileID: 4927896611243586867}
+  bulletSpeed: 30
+  ammoCount: 3
+  muzzleFlash: {fileID: 0}
   ammoCountText: {fileID: 0}
-  gameManager: {fileID: 0}
 --- !u!1 &8803024294667977776
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,11 +287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e60b9fff5822942b03c86fc78753fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 7
   xMax: -6
   Ypadding: 0.47
   Xpadding: 1
+  health: 100
   healthText: {fileID: 0}
-  gameManager: {fileID: 0}
+  bulletDamage: 25
 --- !u!50 &8803024294667977781
 Rigidbody2D:
   serializedVersion: 4

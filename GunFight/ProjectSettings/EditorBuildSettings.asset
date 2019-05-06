@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2500f76505a60b94d994db97e60ee344
   - enabled: 1
-    path: Assets/Scenes/Vs-Normal.unity
+    path: Assets/Scenes/Vs_Mode.unity
     guid: 793e80ef002cc2b4aaf3cde02abb280e
-  - enabled: 1
-    path: Assets/Scenes/Vs-EveryShotCounts.unity
-    guid: ab97c70c1da476e4c8c1289e50f7a41c
   m_configObjects: {}

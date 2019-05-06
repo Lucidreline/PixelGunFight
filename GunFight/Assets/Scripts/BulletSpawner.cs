@@ -7,18 +7,14 @@ public class BulletSpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject bulletPrefab;
-    float bulletSpeed;
-    int ammoCount;
+    [SerializeField] float bulletSpeed = 20;
+    [SerializeField] int ammoCount = 3;
     [SerializeField] GameObject muzzleFlash;
     MuzzleFlash flashScript;
     [SerializeField] TextMeshProUGUI ammoCountText;
 
-    [SerializeField] GameObject gameManager;
     void Start()
     {
-        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
-        bulletSpeed = gameManagerScript.GetBulletSpeed();
-        ammoCount = gameManagerScript.GetStartBulletCount();
         flashScript = muzzleFlash.GetComponent<MuzzleFlash>();
     }
 

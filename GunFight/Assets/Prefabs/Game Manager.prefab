@@ -45,12 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1StarText: {fileID: 0}
   p2StarText: {fileID: 0}
+  bulletReplenishTime: 8
   winnerScreenUI: {fileID: 0}
   displayWinner: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  bulletReplenishTime: 8
-  playerHealth: 100
-  playerMovementSpeed: 8
-  playerBulletDamage: 20
-  playerBulletSpeed: 50
-  startAmmoCount: 3
