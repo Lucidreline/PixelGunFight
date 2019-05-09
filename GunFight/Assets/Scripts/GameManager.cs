@@ -137,5 +137,8 @@ public class GameManager : MonoBehaviour
         winnerScreenUI.SetActive(true);
     }
 
-    
+    public void QuitTheGame()
+    {
+        Application.Quit();
+    }
 }
