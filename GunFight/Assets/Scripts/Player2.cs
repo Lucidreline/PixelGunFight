@@ -18,11 +18,16 @@ public class Player2 : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] float bulletDamage = 25f;
 
-    
 
+    [SerializeField] GameObject gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+        moveSpeed = gameManagerScript.GetMovementSpeed();
+        health = gameManagerScript.GetPlayerHealth();
+        bulletDamage = gameManagerScript.GetBulletDamage();
+
         setUpMoveBoundries();
     }
 

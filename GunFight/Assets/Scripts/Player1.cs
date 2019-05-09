@@ -5,6 +5,8 @@ using TMPro;
 
 public class Player1 : MonoBehaviour
 {
+    [SerializeField] GameObject gameManager;
+
 
     [SerializeField] float moveSpeed = 10f;
     float xMin;
@@ -18,11 +20,16 @@ public class Player1 : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] float bulletDamage = 25f;
 
-    
 
+    
     // Start is called before the first frame update
     void Start()
     {
+        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+        moveSpeed = gameManagerScript.GetMovementSpeed();
+        health = gameManagerScript.GetPlayerHealth();
+        bulletDamage = gameManagerScript.GetBulletDamage();
+
         setUpMoveBoundries();
     }
 

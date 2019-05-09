@@ -14,8 +14,12 @@ public class BulletSpawner2 : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI ammoCountText;
 
+    [SerializeField] GameObject gameManager;
     void Start()
     {
+        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+        bulletSpeed = gameManagerScript.GetBulletSpeed();
+        ammoCount = gameManagerScript.GetStartBulletCount();
         flashScript = muzzleFlash.GetComponent<MuzzleFlash>();
     }
     void Update()
