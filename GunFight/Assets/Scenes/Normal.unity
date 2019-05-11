@@ -191,12 +191,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16985055a280e6e4ba540a354c4082f5, type: 3}
---- !u!1 &278663157 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6621267831669830322, guid: f93f6500f670f024da4cf0ecec176eda,
-    type: 3}
-  m_PrefabInstance: {fileID: 6621267831947967815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &283265283 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1115078343112546592, guid: ae52e34158975d14d9fc925afc0207eb,
@@ -3488,7 +3482,8 @@ PrefabInstance:
         type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 278663157}
+      objectReference: {fileID: 6621267831669830322, guid: f93f6500f670f024da4cf0ecec176eda,
+        type: 3}
     - target: {fileID: 314135238305539754, guid: f38d3439156cc164386a93f5d48ef96e,
         type: 3}
       propertyPath: m_LocalScale.x

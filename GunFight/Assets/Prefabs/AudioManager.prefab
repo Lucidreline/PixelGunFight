@@ -50,3 +50,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: dab3c1b44422e8f4aaf5dc634a0c0d10, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  gunshot: {fileID: 8300000, guid: a9693f576aef5a14cbf8ddda2dc21d21, type: 3}
