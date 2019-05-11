@@ -5,11 +5,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    int p1StarCount = 0;
-    int p2StarCount = 0;
-    [SerializeField]TextMeshProUGUI p1StarText;
-    [SerializeField]TextMeshProUGUI p2StarText;
-
     // for the bullet replenishments
     GameObject bulletSpawner;
     GameObject bulletSpawner2;
@@ -17,11 +12,19 @@ public class GameManager : MonoBehaviour
     BulletSpawner2 bulletSpawnerScript2;
     bool bulletLoop = true;
 
+    [Header("Displaying")]
     [SerializeField] GameObject winnerScreenUI;
     [SerializeField] TextMeshProUGUI displayWinner;
 
     [SerializeField] GameObject pauseMenu;
+    bool isPaused;
 
+    int p1StarCount = 0;
+    int p2StarCount = 0;
+    [SerializeField] TextMeshProUGUI p1StarText;
+    [SerializeField] TextMeshProUGUI p2StarText;
+
+    [Header("Sending Info")]
     [SerializeField] int bulletReplenishTime = 8;
     [SerializeField] float playerHealth = 100f;
     [SerializeField] float playerMovementSpeed = 7.5f;
@@ -30,7 +33,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] int startAmmoCount = 2;
 
 
-    bool isPaused;
 
     //send info
     public float GetPlayerHealth()
@@ -65,8 +67,6 @@ public class GameManager : MonoBehaviour
 
         isPaused = false;
         UnpauseGame();
-        
-
     }
 
     void Update()
@@ -85,22 +85,15 @@ public class GameManager : MonoBehaviour
         bulletLoop = true;
         bulletSpawnerScript.AddAmmo(1);
         bulletSpawnerScript2.AddAmmo(1);
-        
-
     }
 
     void HandlePauseBtn()
     {
         if (Input.GetKeyDown("space") && isPaused == false)
-        {
             PauseGame();
-            
-        }
+
         else if (Input.GetKeyDown("space") && isPaused == true)
-        {
             UnpauseGame();
-            
-        }
     }
 
     void PauseGame()
@@ -123,14 +116,12 @@ public class GameManager : MonoBehaviour
 
     public void StarDestroyed(int playerNum)
     {
-        
         if(playerNum == 1)
-        {
             p1StarCount++;
-        }else if (playerNum == 2)
-        {
+
+        else if (playerNum == 2)
             p2StarCount++;
-        }
+
         ManageStars();
     }
 
@@ -140,15 +131,10 @@ public class GameManager : MonoBehaviour
         p2StarText.text = p2StarCount.ToString();
 
         if (p1StarCount >= 3)
-        {
             WinnerScreen(1);
-            
-        }
+
         else if (p2StarCount >= 3)
-        {
             WinnerScreen(2);
-            
-        }
     }
 
     private void WinnerScreen(int playerNum)
@@ -157,13 +143,11 @@ public class GameManager : MonoBehaviour
         string winner;
 
         if(playerNum == 1)
-        {
             winner = "Player 1";
-        }
+
         else
-        {
             winner = "Player 2";
-        }
+
         displayWinner.text = winner;
         winnerScreenUI.SetActive(true);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    [SerializeField] float coinDropFrequency;
+    float coinDropFrequency;
     [SerializeField] List<GameObject> coinPrefabs;
     [SerializeField] float maxFreq = 5f;
     [SerializeField] float minFreq = 2f;
@@ -15,7 +15,8 @@ public class CoinSpawner : MonoBehaviour
     
     void Update()
     {
-        if (coinLoop) StartCoroutine(DropRandomCoin());
+        if (coinLoop)
+            StartCoroutine(DropRandomCoin());
     }
 
     IEnumerator DropRandomCoin()
@@ -31,5 +32,4 @@ public class CoinSpawner : MonoBehaviour
         Instantiate(coinPrefab, dropPos, Quaternion.identity);
         coinLoop = true;
     }
-
 }

@@ -1,26 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class Player2 : MonoBehaviour
 {
 
-    [SerializeField] float moveSpeed = 10f;
-    float xMin = 6f;
-    [SerializeField] float xMax;
+    [SerializeField] GameObject gameManager;
+
+    [Header("Position")]
+    float xMin;
+    [SerializeField] float xMax = -6f;
     float yMin;
     float yMax;
     [SerializeField] float Ypadding = .5f;
     [SerializeField] float Xpadding = 1f;
 
-    [SerializeField] float health = 50;
+    [Header("Movement")]
+    [SerializeField] float moveSpeed = 10f;
+
+    [Header("Other")]
+    float health = 100;
     [SerializeField] TextMeshProUGUI healthText;
-    [SerializeField] float bulletDamage = 25f;
+    float bulletDamage = 20;
 
-
-    [SerializeField] GameObject gameManager;
-    // Start is called before the first frame update
     void Start()
     {
         GameManager gameManagerScript = gameManager.GetComponent<GameManager>();

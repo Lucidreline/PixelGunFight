@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class menuScreenManager : MonoBehaviour
 {
     int currentIndex;
     [SerializeField] List<GameObject> menuScreens;
-    //menu screen index list
-    //0 = mainMenu
-    //1 = Game Modes
-    //2 = Controls
 
     void Start()
     {
@@ -19,6 +14,8 @@ public class menuScreenManager : MonoBehaviour
     
     public void SwitchMenuScreen(int indexNum)
     {
+        //This will shut down all menu screens and only
+        //enable the one that I want
         currentIndex = indexNum;
         SwitchOffAllMenuScreens();
         menuScreens[indexNum].SetActive(true);
