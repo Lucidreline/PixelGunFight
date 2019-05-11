@@ -5,6 +5,9 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject gameManager;
 
+    [SerializeField] GameObject audioManager;
+    AudioManager audioManagerScript;
+
     [Header("Bullet")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed = 20;
@@ -19,6 +22,8 @@ public class BulletSpawner : MonoBehaviour
     void Start()
     {
         GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
+        audioManagerScript = audioManager.GetComponent<AudioManager>();
+
         bulletSpeed = gameManagerScript.GetBulletSpeed();
         ammoCount = gameManagerScript.GetStartBulletCount();
         flashScript = muzzleFlash.GetComponent<MuzzleFlash>();
@@ -43,6 +48,7 @@ public class BulletSpawner : MonoBehaviour
         {
             if(ammoCount > 0)
             {
+                audioManagerScript.Play("GunShot");
                 flashScript.ActivateFlash();
                 var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);

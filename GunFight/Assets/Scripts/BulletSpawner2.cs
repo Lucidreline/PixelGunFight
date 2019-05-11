@@ -43,6 +43,7 @@ public class BulletSpawner2 : MonoBehaviour
         {
             if(ammoCount > 0)
             {
+                FindObjectOfType<AudioManager>().Play("GunShot");
                 flashScript.ActivateFlash();
                 var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
