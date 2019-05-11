@@ -3224,12 +3224,12 @@ PrefabInstance:
     - target: {fileID: 5740423864303995496, guid: b9657417d51adef4d9483b907799a197,
         type: 3}
       propertyPath: minFreq
-      value: 1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5740423864303995496, guid: b9657417d51adef4d9483b907799a197,
         type: 3}
       propertyPath: maxFreq
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9657417d51adef4d9483b907799a197, type: 3}

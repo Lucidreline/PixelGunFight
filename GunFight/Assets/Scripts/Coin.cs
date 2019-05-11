@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] int bulletAmmount = 0;
     GameObject p1PlayerGun;
     GameObject p2PlayerGun;
     BulletSpawner p1GunScript;
     BulletSpawner2 p2GunScript;
 
+    [SerializeField] int givesHowManyBullets = 0;
     [SerializeField] int bounceTimesBeforeDestroyed = 3;
-    [SerializeField] int shredCount = 0;
+    [SerializeField] int shredderBouncesUntilDestroyed = 0;
 
     
 
@@ -29,21 +29,19 @@ public class Coin : MonoBehaviour
     {
         if (collider.gameObject.tag == "Bullet2")
         {
-            p2GunScript.AddAmmo(bulletAmmount);
+            p2GunScript.AddAmmo(givesHowManyBullets);
             Destroy(gameObject);
         }
         else if (collider.gameObject.tag == "Bullet1")
         {
-            p1GunScript.AddAmmo(bulletAmmount);
+            p1GunScript.AddAmmo(givesHowManyBullets);
             Destroy(gameObject);
         }
         else if(collider.gameObject.tag == "Shredder")
         {
-            shredCount++;
-                if(shredCount >= bounceTimesBeforeDestroyed)
-            {
-                Destroy(gameObject);
-            }
+            shredderBouncesUntilDestroyed++;
+                if(shredderBouncesUntilDestroyed >= bounceTimesBeforeDestroyed)
+                    Destroy(gameObject);
         }
     }
 }

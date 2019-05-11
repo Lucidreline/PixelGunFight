@@ -1,20 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class BulletSpawner2 : MonoBehaviour
 {
 
+    [SerializeField] GameObject gameManager;
+
+    [Header("Bullet")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed = 20;
     [SerializeField] int ammoCount = 3;
-    [SerializeField] GameObject muzzleFlash;
-    MuzzleFlash flashScript;
-
     [SerializeField] TextMeshProUGUI ammoCountText;
 
-    [SerializeField] GameObject gameManager;
+    [Header("Muzzle Flash")]
+    [SerializeField] GameObject muzzleFlash;
+    MuzzleFlash flashScript;
     void Start()
     {
         GameManager gameManagerScript = gameManager.GetComponent<GameManager>();

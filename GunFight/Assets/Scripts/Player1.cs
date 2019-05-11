@@ -7,8 +7,7 @@ public class Player1 : MonoBehaviour
 {
     [SerializeField] GameObject gameManager;
 
-
-    [SerializeField] float moveSpeed = 10f;
+    [Header("Position")]
     float xMin;
     [SerializeField] float xMax = -6f;
     float yMin;
@@ -16,9 +15,13 @@ public class Player1 : MonoBehaviour
     [SerializeField] float Ypadding = .5f;
     [SerializeField] float Xpadding = 1f;
 
-    [SerializeField] float health = 50;
+    [Header("Movement")]
+    [SerializeField] float moveSpeed = 10f;
+
+    [Header("Other")]
+    float health = 100;
     [SerializeField] TextMeshProUGUI healthText;
-    [SerializeField] float bulletDamage = 25f;
+    float bulletDamage = 20;
 
 
     
