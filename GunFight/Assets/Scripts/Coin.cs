@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
@@ -11,11 +9,9 @@ public class Coin : MonoBehaviour
 
     [SerializeField] int givesHowManyBullets = 0;
     [SerializeField] int bounceTimesBeforeDestroyed = 3;
-    [SerializeField] int shredderBouncesUntilDestroyed = 0;
+    int shredderBounces = 0;
 
-    
 
-    // Start is called before the first frame update
     void Start()
     {
         p1PlayerGun = GameObject.FindGameObjectWithTag("Gun1");
@@ -39,8 +35,8 @@ public class Coin : MonoBehaviour
         }
         else if(collider.gameObject.tag == "Shredder")
         {
-            shredderBouncesUntilDestroyed++;
-                if(shredderBouncesUntilDestroyed >= bounceTimesBeforeDestroyed)
+            shredderBounces++;
+                if(shredderBounces >= bounceTimesBeforeDestroyed)
                     Destroy(gameObject);
         }
     }
