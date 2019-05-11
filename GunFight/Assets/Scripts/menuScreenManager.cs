@@ -5,6 +5,8 @@ public class menuScreenManager : MonoBehaviour
 {
     int currentIndex;
     [SerializeField] List<GameObject> menuScreens;
+    [Header("Send Info")]
+    [SerializeField] int coinShredderBounceLimmit = 3;
 
     void Start()
     {
@@ -12,6 +14,9 @@ public class menuScreenManager : MonoBehaviour
         SwitchMenuScreen(0);
     }
     
+    public int getMenuCoinShredderBounceLimmit() {
+        return coinShredderBounceLimmit;
+    }
     public void SwitchMenuScreen(int indexNum)
     {
         //This will shut down all menu screens and only

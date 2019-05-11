@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] Sound[] sounds;
+    [SerializeField] AudioClip gunshot;
     public static AudioManager instance;
 
 
@@ -37,6 +38,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    void Start() {
+        Play("Theme");
+            
+    }
+
     public void Play(string name) {
         Sound foundSound = Array.Find(sounds, sound => sound.name == name);
         //      ^ what array to look in
@@ -46,6 +52,13 @@ public class AudioManager : MonoBehaviour
             return;
         }
         else 
+            if(name == "GunShot") {
+            foundSound.source.PlayOneShot(gunshot);
+            
+            }
+            else {
             foundSound.source.Play();
+            }
+            
     }  
 }
