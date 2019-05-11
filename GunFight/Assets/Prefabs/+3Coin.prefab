@@ -131,4 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b057aae6a3bd3b4889c1803c502ceea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletAmmount: 3
+  givesHowManyBullets: 3
+  bounceTimesBeforeDestroyed: 3
+  shredderBouncesUntilDestroyed: 3
