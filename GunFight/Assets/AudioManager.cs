@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] Sound[] sounds;
     [SerializeField] AudioClip gunshot;
+    [Range(0f, 10f)] [SerializeField] float overlapGunshotVolume = 4;
     public static AudioManager instance;
 
 
@@ -53,7 +54,7 @@ public class AudioManager : MonoBehaviour
         }
         else 
             if(name == "GunShot") {
-            foundSound.source.PlayOneShot(gunshot);
+            foundSound.source.PlayOneShot(gunshot, 4f);
             
             }
             else {
