@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
 
     [SerializeField] int givesHowManyBullets = 0;
     [SerializeField] int bounceTimesBeforeDestroyed = 3;
-    [SerializeField] int shredderBouncesUntilDestroyed = 0;
+    [SerializeField] int shredderBouncesCount = 0;
 
     
 
@@ -39,8 +39,8 @@ public class Coin : MonoBehaviour
         }
         else if(collider.gameObject.tag == "Shredder")
         {
-            shredderBouncesUntilDestroyed++;
-                if(shredderBouncesUntilDestroyed >= bounceTimesBeforeDestroyed)
+            shredderBouncesCount++;
+                if(shredderBouncesCount >= bounceTimesBeforeDestroyed)
                     Destroy(gameObject);
         }
     }
