@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 10f)] [SerializeField] float overlapGunshotVolume = 4;
     public static AudioManager instance;
 
+    float volumeBeforeMute;
+
 
     void Awake()
     {
@@ -34,6 +36,10 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
+            volumeBeforeMute = s.volume;
+
+            s.source.mute = false;
+
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -44,6 +50,24 @@ public class AudioManager : MonoBehaviour
             
     }
 
+    public void Mute(string name) {
+        Sound foundSound = Array.Find(sounds, sound => sound.name == name);
+        if (sounds == null) {
+            Debug.LogWarning("Could not find sound: '" + name + "'");
+            return;
+        }
+        if (foundSound.source.mute) {
+            foundSound.source.volume = volumeBeforeMute;
+            foundSound.source.mute = false;
+        }
+        else {
+            foundSound.source.volume = 0f;
+            foundSound.source.mute = true;
+        }
+        
+        
+    }
+
     public void Play(string name) {
         Sound foundSound = Array.Find(sounds, sound => sound.name == name);
         //      ^ what array to look in
@@ -52,7 +76,6 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Could not find sound: '" + name + "'");
             return;
         }
-        else 
             if(name == "GunShot") {
             foundSound.source.PlayOneShot(gunshot, 4f);
             
